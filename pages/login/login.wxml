@@ -1,0 +1,28 @@
+<view class="login-page">
+
+  <view class='logo'>
+    <text>Welcome</text>
+  </view>
+
+  <view class='login-form'>
+    <view class='item'>
+      <i class="mui-icon-my-user my-user"></i>
+      <input bindinput="changeUsername" placeholder="请输入用户名" placeholder-style="color:#fff" class='item-input' />
+    </view>
+    <view class='item'>
+      <i class="mui-icon-my-password my-pwd"></i>
+      <input bindinput="changePassword" password placeholder="请输入密码" placeholder-style="color:#fff" class='item-input' />
+    </view>
+  </view>
+
+  <view class='login-button'>
+    <button type="default" bindtap="login" class='button' style='color: #fff; background: #0088fc;'>
+      登\t录
+    </button>
+  </view>
+
+  <view class='foot'>
+    技术支持：安徽智恒信科技有限公司
+  </view>
+
+</view>
