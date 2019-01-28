@@ -1,16 +1,52 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
-  <view>
-    <i-button type="primary" bind:click="handleClick">返回登录</i-button>
-  </view>
+<view class="index-page">
+  <scroll-view scroll-y="true">
+    <!--列表  -->
+    <view class='project-part'>
+      <view class='name'>
+        <text>你好，{{name}}</text>
+        <picker mode="date" value="{{date}}" start="{{startDate}}" end="{{endDate}}"
+        bindchange="bindDateChange" style='float: right;'>
+          <view class="date">
+            {{date}}  {{day}}
+            <image src="../../assets/img/arrow-bottom.png" style='width: 25rpx; height: 20rpx; margin-left: 50rpx;'></image>
+          </view>
+        </picker>
+      </view>
+
+      <view class="list-part">
+        <view class="row" wx:for="{{ list }}" wx:key="id">
+          <text class="label">{{ item.name }}</text>
+          <view class='time'>
+            耗时：<text class='hour'>{{ item.value }}小时</text>
+            <image src="../../assets/img/arrow-right.png" style='width: 25rpx; height: 30rpx; margin-left: 10rpx;'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!--圆饼图  -->
+    <view class='echart-part'>
+      <view class='choose-month'>
+        <picker mode="date" fields="month" value="{{pieDate}}" start="{{startMonth}}" end="{{endMonth}}"
+        bindchange="bindDateChange2">
+          <view>
+            <image src="../../assets/img/date.png" style='width: 36rpx; height: 36rpx;'></image>
+            {{pieDate}}
+          </view>
+        </picker>
+      </view>
+      <view class='echarts'>
+        <ec-canvas id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ec }}" bind:init="echartInit" wx:if="{{!echartIsEmpty}}"></ec-canvas>
+        <view class='work-month-empty' wx:else>暂无统计数据</view>
+      </view>
+    </view> 
+  </scroll-view>
+
+  <!--打卡按钮  -->
+  <cover-view class='login-button'>
+    <cover-view style='width:100%;'> 
+        <button type="default" bindtap="clockIn" style='color: #fff; background: #0088fc; font-size: 36rpx; height: 85rpx;'>工作打卡</button>  
+    </cover-view>
+  </cover-view>
 </view>

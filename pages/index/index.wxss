@@ -1,21 +1,70 @@
-/**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/*打卡按钮  */
+.login-button {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  background-color: #f8f8f8;
+  padding: 50rpx;
+  border: none;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+/*列表  */
+.project-part {
+  background: #fff;
+}
+.name {
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 30rpx 0 30rpx;
+  font-size: 30rpx;
+  color: #9b9b9b;
+}
+.date {
+  float: right;
+  font-size: 34rpx;
+  color: #333333;
+}
+.list-part {
+  border-bottom: 1px solid #e5e5e5;
+  border-top: 1px solid #e5e5e5;
+}
+.row {
+  height: 87rpx;
+  line-height: 87rpx;
+  margin: 0 30rpx 0 30rpx;
+  font-size: 32rpx;
+  color: #333333;
+}
+.row+.row {
+  border-top: 1px solid #e5e5e5;
+}
+.time {
+  float: right;
+}
+.hour {
+  color: #ff2c2c;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+/*圆饼图  */
+.echart-part {
+  position: relative;
+  background: #fff;
+  margin-top: 20rpx;
+  padding-top: 30rpx;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  color: #0088fc;
+  font-size: 34rpx;
 }
-
-.usermotto {
-  margin-top: 200px;
+.choose-month {
+  position: absolute;
+  top: 30rpx;
+  right: 30rpx;
+  z-index: 66;
+}
+.echarts {
+  height: 600rpx;  
+  width: 100%;
 }

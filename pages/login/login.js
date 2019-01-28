@@ -1,3 +1,4 @@
+const CryptoJS = require('../../utils/crypto.js');
 const app = getApp();
 
 Page({

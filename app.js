@@ -1,4 +1,8 @@
 //app.js
+const http = require('./utils/http.js');
+const util = require('./utils/util.js');
+const initChart = require('./utils/initChart.js');
+
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -34,6 +38,9 @@ App({
     // })
   },
   globalData: {
-    userInfo: null
-  }
+    userInfo: null,
+  },
+  http: http, // 网络请求
+  util: util, // 方法封装
+  initChart: initChart // 图表封装
 })

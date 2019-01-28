@@ -1,5 +1,6 @@
 {
+  "navigationBarTitleText": "首页",
   "usingComponents": {
-    "i-button": "../../dist/button/index"
+    "ec-canvas": "../../ec-canvas/ec-canvas"
   }
 }
